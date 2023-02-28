@@ -11,13 +11,14 @@ const allRef = {
    div : document.querySelector('#boxes')
 }
 
-let count = 0;
 
 
 
 allRef.btnCreat.addEventListener('click',getValue)
 allRef.btnDestroy.addEventListener('click',destroyBoxes)
-  function getValue(){
+let count = 0;
+  
+function getValue(){
   createBoxes(allRef.input.value)
   }
   function createBoxes(amount){
@@ -30,9 +31,11 @@ allRef.btnDestroy.addEventListener('click',destroyBoxes)
        f.style.height = `${size+count}px`
        allRef.div.append(f)
     }
+    count = 0
   }
 function destroyBoxes(){
 allRef.div.innerHTML = '';
+count = 0
 }
 
 

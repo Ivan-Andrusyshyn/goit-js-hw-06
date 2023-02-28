@@ -14,9 +14,23 @@ const images = [
 ];
 const list = document.querySelector('.gallery')
 
-for(let w of images){
-  console.log(w.alt)
-list.insertAdjacentHTML("beforeend", `<li class="list-item"> 
-<img src="${w.url}" alt="${w.alt}"></li>`);
-}
+const img = images.map((el)=>
+  `<li class="list-item"> 
+  <img src="${el.url}" alt="${el.alt}"></li>`
 
+).join('')
+list.insertAdjacentHTML( "beforeend", img);
+
+
+
+// const list = document.querySelector('#ingredients')
+// let f = [];
+// const items = ingredients.map((el)=>{
+//   const fruits = el;
+//  const liEl =  document.createElement('li')
+//  liEl.classList.add('item')
+//  liEl.textContent = el
+//  f.push(liEl)
+// }
+// )
+// list.append(...f)
